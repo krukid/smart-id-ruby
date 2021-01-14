@@ -9,11 +9,7 @@ module SmartId::Utils
     def initialize(hash_data, signature, certificate)
       @hash_data = hash_data
       @signature = signature
-      begin
-        @certificate = certificate.cert
-      rescue Exception
-        debugger
-      end
+      @certificate = certificate.cert
     end
 
     def certificate_valid?
@@ -23,8 +19,9 @@ module SmartId::Utils
       # cert_store.add_dir(File.dirname(__FILE__)+"/../../../trusted_certs/")
       # cert_store.purpose = OpenSSL::X509::PURPOSE_ANY
       # OpenSSL::X509::Store.new.verify(@certificate) && 
-      @certificate.not_before.to_date < Date.today && 
-        @certificate.not_after.to_date > Date.today
+      not_before = Date.today >= @certificate.not_before.to_date
+      not_after = Date.today <= @certificate.not_after.to_date
+      not_before && not_after
     end
 
     def validate_certificate!
