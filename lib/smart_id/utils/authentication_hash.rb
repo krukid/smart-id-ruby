@@ -14,6 +14,11 @@ module SmartId
         Digest::SHA256.digest(hash_data)
       end
 
+      # smart-id server appears to digest the digest to calculate verification code
+      def calculate_verification_digest
+        Digest::SHA256.digest(calculate_digest)
+      end
+
       def calculate_base64_digest
         Base64.strict_encode64(calculate_digest)
       end
