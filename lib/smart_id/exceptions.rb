@@ -2,11 +2,14 @@ module SmartId
   class Exception < ::Exception; end
   class InvalidParamsError < Exception; end
   class SSLCertificateNotVerified < Exception; end
+  class InvalidPermissionsError < Exception; end
   class InvalidResponseCertificate < Exception; end
   class InvalidResponseSignature < Exception; end
   class UserNotFoundError < Exception; end
   class OutdatedApiError < Exception; end
   class SystemUnderMaintenanceError < Exception; end
+  class UserRefusedError < Exception; end
+  class UserTimeoutError < Exception; end
 
   class ConnectionError < Exception;
     attr_reader :original_error
