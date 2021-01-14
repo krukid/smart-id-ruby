@@ -5,7 +5,8 @@ module SmartId::Api
     DEMO_BASE_URL = "https://sid.demo.sk.ee/smart-id-rp/v1/"
     PRODUCTION_BASE_URL = "https://rp-api.smart-id.com/v1/"
 
-    DEMO_SSL_KEY = "QLZIaH7Qx9Rjq3gyznQuNsvwMQb7maC5L4SLu/z5qNU="
+    # DEMO_SSL_KEY = "QLZIaH7Qx9Rjq3gyznQuNsvwMQb7maC5L4SLu/z5qNU="
+    DEMO_SSL_KEY = "+Tz0G7u3vgcaw/o32vIoCNNjpfo8UugQEXmWkrCuc4o="
     PROD_KEY_EXPIRY = Date.new(2020,11,5)
     PRODUCTION_SSL_KEY = "l2uvq6ftLN4LZ+8Un+71J2vH1BT9wTbtrE5+Fj3Vc5g="
 
